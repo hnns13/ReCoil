@@ -1,5 +1,6 @@
 # ReCoil
 Reverse Communication Inter Link
+- small practice for secure reverse shell engineering -
 
 Schritt 1: Reverse Shell
 1. Was node.py tun soll:
@@ -25,4 +26,16 @@ Schritt 1: Reverse Shell
 ==> Noch zu testen.
 
 Schritt 2: AES Verschlüsselung der Kommunikation
+
+          [Node]                              [Listener]
+             │                                    │
+    gen b_priv, b_pub                            │
+             │────── send b_pub ────────────────▶│
+             │                                    │
+                                      gen a_priv, a_pub
+             │◀────── send a_pub ────────────────│
+             │                                    │
+   shared = b_priv * a_pub           shared = a_priv * b_pub
+             │                                    │
+     AES key = SHA256(shared.x)       AES key = SHA256(shared.x)
 

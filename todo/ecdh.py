@@ -1,6 +1,10 @@
 # ECDH key will replace static key of crpyto.py
 # crpytography program is being restructured to use ECDH for key exchange 
 
+a= 0xffffffff00000001000000000000000000000000fffffffffffffffffffffffc # Basisparameter seckp256k1
+G = (0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296, 0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5) # Basisparameter seckp256k1
+p = 0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff # Basisparameter seckp256k1
+
 def multiply_point(P, k, p, a): #double-and-add
     result = (0, 0)
     while k > 0:
@@ -11,7 +15,6 @@ def multiply_point(P, k, p, a): #double-and-add
     return result
 
 def add_points(P1, P2, p, a):
-
     if P1 == (0, 0):
         return P2 
     if P2 == (0, 0):
@@ -40,9 +43,5 @@ def modinv(a, p):
     return x % p 
 
 if __name__ == "__main__":
-
-    a= 0xffffffff00000001000000000000000000000000fffffffffffffffffffffffc # Basisparameter seckp256k1
-    G = (0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296, 0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5) # Basisparameter seckp256k1
-    p = 0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff # Basisparameter seckp256k1
-
+    # Example usage
     exit
