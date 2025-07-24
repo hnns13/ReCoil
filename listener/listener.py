@@ -20,3 +20,6 @@ def start_server(host='0.0.0.0', port=4444):
 
     client.close()
     s.close()
+
+if __name__ == "__main__":
+    start_server() # Start the server when the script is run directly
