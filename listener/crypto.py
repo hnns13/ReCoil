@@ -4,7 +4,7 @@ from Crypto.Random import get_random_bytes
 from base64 import b64encode, b64decode
 
 # temporary key --> later on: ECDH
-KEY = b'sixteen byte key!!sixteen byte key!!'  # 32 bytes for AES-256
+KEY = b'This_is_my_32byte_long_AES_key!!!' # 32 bytes for AES-256
 
 BLOCK_SIZE = 16  # AES block size in bytes
 
